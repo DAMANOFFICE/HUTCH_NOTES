@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Hutch Transportation</title>
+<style>
+  * {box-sizing: border-box; margin:0; padding:0}
+  html,body {height:100%; font-family: Arial, sans-serif; color:#fff;}
+
+  /* Header / Nav */
+  header {
+    background:#000;
+    position: sticky;
+    top:0;
+    z-index:1000;
+  }
+  .container {
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:72px;
+  }
+  .logo {
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .logo img {
+    height:50px;
+    object-fit:contain;
+  }
+  .logo .title {
+    font-size:18px;
+    font-weight:bold;
+    color:#f04f2f;
+    letter-spacing:0.5px;
+  }
+
+  nav ul {
+    list-style:none;
+    display:flex;
+    gap:2px;
+    align-items:center;
+  }
+  nav a {
+    display:block;
+    padding:12px 14px;
+    color:#fff;
+    text-decoration:none;
+    font-size:13px;
+    letter-spacing:1px;
+  }
+  nav li:hover > a {
+    background: rgba(255,255,255,0.05);
+  }
+
+  /* Dropdown */
+  .has-dropdown { position:relative; }
+  .dropdown {
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#111;
+    min-width:160px;
+    display:none;
+    flex-direction:column;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+  }
+  .dropdown a {
+    padding:10px 14px;
+    white-space:nowrap;
+    font-size:14px;
+  }
+  .dropdown a:hover {
+    background: rgba(255,255,255,0.08);
+  }
+  .has-dropdown:hover .dropdown {
+    display:flex;
+  }
+
+  /* Hero */
+  .hero {
+    position:relative;
+    height:78vh;
+    min-height:480px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background-image: url("https://wallpapercave.com/wp/wp3022610.jpg");
+    background-size:cover;
+    background-position:center center;
+  }
+  .hero::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.55));
+  }
+  .hero-inner {
+    position:relative;
+    z-index:1;
+    padding:40px 20px;
+  }
+  .hero h1 {
+    font-size:48px;
+    letter-spacing:2px;
+    margin-bottom:12px;
+    font-weight:bold;
+  }
+  .hero p {
+    font-size:18px;
+    opacity:0.95;
+  }
+
+  @media (max-width:900px) {
+    .container { height:64px; padding:0 14px;}
+    nav ul { gap:0; }
+    .hero h1 { font-size:32px; }
+    .hero p { font-size:15px; }
+    .logo img { height:40px; }
+    .logo .title { font-size:15px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">
+      <img src="http://www.hutchtransportation.com/images/ftr-logo.png" alt="Hutch Transportation Logo">
+      <div class="title">HUTCH TRANSPORTATION</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">SERVICES</a></li>
+        <li><a href="#">RATES</a></li>
+        <li><a href="#">PHOTO GALLERY</a></li>
+        <li><a href="#">CONTACT US</a></li>
+        <li class="has-dropdown">
+          <a href="#">WORK NOTES ▾</a>
+          <div class="dropdown">
+            <a href="E:\temporary\notes\STEP1.HTML">Step 1</a>
+            <a href="#">Step 2</a>
+            <a href="#">Step 3</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>HUTCH TRANSPORTATION</h1>
+    <p>PROFESSIONALISM OF DRIVERS &amp; RELIABLE VEHICLES</p>
+  </div>
+</section>
+
+<main style="background:#fff; color:#222; padding:48px 20px;">
+  <div style="max-width:1100px; margin:auto;">
+    <h2 style="color:#d94b2f; text-align:center; margin-bottom:18px;">ABOUT HUTCH TRANSPORT</h2>
+    <p style="text-align:center; color:#444;">
+      This is placeholder content. Replace with your real website sections (About, Services, Rates, Gallery, Contact).
+    </p>
+  </div>
+</main>
+
+</body>
+</html>

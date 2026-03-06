@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emails - Shipping Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0d0d0d;
+      color: #f0f0f0;
+    }
+
+    /* Header */
+    .top-bar {
+      background: #000;
+      color: #0ff;
+      padding: 18px 30px;
+      font-size: 1.8rem;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      border-bottom: 2px solid #0ff;
+      box-shadow: 0 0 15px #0ff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      gap: 12px;
+    }
+    .top-bar span {font-size: 2rem;}
+
+    /* Main container */
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      color: #ff00ff;
+      text-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+    }
+    .subtitle {font-size: 1.2rem; color: #aaa; margin-bottom: 50px;}
+
+    /* Cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      background: rgba(20, 20, 20, 0.9);
+      border: 1px solid #222;
+      border-radius: 15px;
+      padding: 25px;
+      text-align: left;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      box-shadow: 0 0 10px #111;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px #0ff, 0 0 40px #ff00ff;
+      border-color: #0ff;
+    }
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: #0ff;
+      text-shadow: 0 0 8px #0ff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card p {font-size: 0.95rem; color: #ddd; line-height: 1.5;}
+
+    /* Modal Styles */
+    .modal {
+      display: none; 
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+.modal-content {
+  background: #111;
+  border: 2px solid #0ff;
+  box-shadow: 0 0 25px #0ff, 0 0 40px #ff00ff;
+  border-radius: 15px;
+  width: 80%;          /* ⬅️ now takes 80% width of screen */
+  height: 80%;         /* ⬅️ now takes 80% height of screen */
+  display: flex;
+  overflow: hidden;
+  animation: popIn 0.3s ease-out;
+}
+.modal-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* ⬅️ makes sure full image is visible */
+  background: #000;
+}
+
+    @keyframes popIn {
+      from {transform: scale(0.8); opacity: 0;}
+      to {transform: scale(1); opacity: 1;}
+    }
+
+    .modal-left img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .modal-right {
+      flex: 1;
+      padding: 25px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .modal-right h2 {
+      color: #0ff;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+    .modal-right p {
+      font-size: 1rem;
+      color: #ddd;
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 2rem;
+      color: #ff00ff;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .close-btn:hover {color: #fff;}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="top-bar">
+    <span>🚛</span> Hutch Transport
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>Emails</h1>
+    <div class="subtitle">Guide for Writing Professional Shipping Emails 🚢📧</div>
+
+    <!-- Cards -->
+    <div class="card-grid">
+      <div class="card" onclick="openModal('pickup')">
+        <h2>📦 Pickup Number Request</h2>
+        <p>Template and examples for requesting a pickup number from the transporter.</p>
+      </div>
+      <div class="card" onclick="openModal('shipline')">
+        <h2>🚢 Shipline Request</h2>
+        <p>How to draft professional emails for shipline-related queries and updates.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="popupModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <div class="modal-left">
+        <img id="modalImage" src="" alt="Email Guide">
+      </div>
+      <div class="modal-right">
+        <h2 id="modalTitle"></h2>
+        <p id="modalText"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Data for cards
+    const modalData = {
+      pickup: {
+        title: "Pickup Number Request",
+        text: "0. IN SUBJECT --NEED PICKUP NUMBER -----------[SUBJECT CONTAINER]\n1. REPLY ALL FROM WHERE ORDER CAME \n 2. COPY SIGNATURE AND PASTE IT IN INFO SECTION\n3. TRACE THE CONTAINER AND SCREENSHOT FOR ETA CONFIRMATION\n*READ OTHER MAILS CLEARLY BEFORE MAILING*\n# IF WE ARE MAILING tanya MAKE SURE NOT TO CLEAR SUBJECT OF THE MAIL \n SEND TANYA PU MAIL FOR INDIVIDUAL CONTAINER\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        img: "file:///E:/temporary/notes/MAILS%20PICS/PICKUP_MAIL.png"
+      },
+      shipline: {
+        title: "Shipline Request",
+        text: "1. WRITE NEED SHIPPLINE//CONT. NO. IN SUBJECT \n 2. WRITE SIGNATURE AS IT IS WITHOUT CHANGING .",
+        img: "file:///E:/temporary/notes/MAILS%20PICS/SHIPLINE.png"
+      }
+    };
+
+    function openModal(type) {
+      document.getElementById("popupModal").style.display = "flex";
+      document.getElementById("modalTitle").innerText = modalData[type].title;
+      document.getElementById("modalText").innerText = modalData[type].text;
+      document.getElementById("modalImage").src = modalData[type].img;
+    }
+
+    function closeModal() {
+      document.getElementById("popupModal").style.display = "none";
+    }
+
+    // Close modal when clicking outside content
+    window.onclick = function(event) {
+      let modal = document.getElementById("popupModal");
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+  </script>
+
+</body>
+</html>

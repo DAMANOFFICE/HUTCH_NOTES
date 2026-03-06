@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Step 1</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      color: white;
+      min-height: 100vh;
+      background: url('https://t3.ftcdn.net/jpg/12/88/37/28/360_F_1288372875_pO4y9lJijIvCkVn9uf64zR6F7VeenYS0.jpg') center/cover no-repeat fixed;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      backdrop-filter: blur(6px);
+      z-index: -1;
+    }
+    header {
+      width: 100%;
+      background-color: black;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    h1 {
+      text-align: center;
+      margin: 2rem 0 0.5rem 0;
+      font-size: 3rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+    .description {
+      max-width: 800px;
+      margin: 0 auto 2rem auto;
+      padding: 1rem 2rem;
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 1rem;
+      backdrop-filter: blur(6px);
+      font-size: 1.1rem;
+      line-height: 1.6rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .sections {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem 5%;
+    }
+    .card {
+      background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+      border-radius: 1rem;
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: #facc15;
+    }
+    .card p {
+      font-size: 1rem;
+      line-height: 1.6rem;
+      color: #f3f4f6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Hutch Transportation
+  </header>
+  <h1>STEP 1</h1>
+  <div class="description">
+    This is the first step in our process, guiding you through the essential tasks. Click on any of the sections below to proceed to the respective task pages.
+  </div>
+  <div class="sections">
+    <div class="card" onclick="window.location.href='file:///E:/temporary/notes/orders.html'">
+      <h2>Order Filling</h2>
+      <p>All order-related information is recorded and managed in Dispatch Panda, based on details received from customer emails. This centralized system ensures accurate tracking, clear documentation, and consistent execution of every shipment request..</p>
+    </div>
+    <div class="card" onclick="window.location.href='file:///E:/temporary/notes/PAPERWORK.HTML'">
+      <h2>Paper Work</h2>
+      <p>In our paperwork process, we include interchange PODs within orders and ensure these interchanges are properly renamed to facilitate accurate invoicing. Additionally, we manage all documentation related to the repair and maintenance of our transportation units, including chassis and trucks. .</p>
+    </div>
+    <div class="card" onclick="window.location.href='file:///E:/temporary/notes/RV_S.HTML'">
+      <h2>RV Setup</h2>
+      <p>We also arrange RVs for containers scheduled to be picked up, ensuring timely coordination and smooth operations..</p>
+    </div>
+    <div class="card" onclick="window.location.href='file:///E:/temporary/notes/EMAILS.HTML'">
+      <h2>Emailing</h2>
+      <p>We also handle all correspondence related to orders, including addressing any missing information or discrepancies to ensure accuracy and smooth processing..</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paperwork - Hutch Transport</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #ede7f6);
+      color: #333;
+    }
+
+    /* Header */
+    .header {
+      background: #212121;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 1.6rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      letter-spacing: 1px;
+    }
+
+    .header span {
+      margin-left: 8px;
+    }
+
+    /* Main Section */
+    .main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .main h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .main p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    /* Card Grid */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    .card h2 {
+      font-size: 1.4rem;
+      color: #6a1b9a;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 60px;
+      padding: 20px;
+      background: #212121;
+      color: #bbb;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    h5{
+       padding-left: 30px; 
+      font-size:20px }
+
+    /* ===== Modal Styles ===== */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(5px);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #fff;
+      width: 80%;
+      height: 80%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      padding: 30px;
+      position: relative;
+      overflow-y: auto;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content h2 {
+      color: #6a1b9a;
+      margin-bottom: 15px;
+    }
+
+    .modal-content p {
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 2rem;
+      color: #666;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.95);}
+      to {opacity: 1; transform: scale(1);}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">🚛 <span>Hutch Transport</span></div>
+
+  <!-- Main -->
+  <div class="main">
+    <h1>Paperwork</h1>
+    <p>Guidelines and processes for handling transport and shipping documentation.</p>
+
+    <!-- Card Grid -->
+    <div class="card-grid">
+      <div class="card" onclick="openModal('renaming')">
+        <h2>📝 RENAMING</h2>
+        <p>How to rename interchanges and driver names </p>
+      </div>
+      <div class="card" onclick="openModal('invoice')">
+        <h2>📄 REPAIR AND MAINTANCE WORK </h2>
+        <p>How to do repair and maintance related paper-work.</p>
+      </div>
+      <div class="card" onclick="openModal('packing')">
+        <h2>📑 ATTACHING    PAPER    WORKS    TO    LOADS</h2>
+        <p>How to attach interchanges to dispatch panda </p>
+      </div>
+      <div class="card" onclick="openModal('verification')">
+        <h2>✅ Document Verification</h2>
+        <p>Checklist for verifying documents before submission to avoid errors and delays.</p>
+      </div>
+      <div class="card" onclick="openModal('sharing')">
+        <h2>📧 Document Sharing</h2>
+        <p>Best practices for sending paperwork via email securely and professionally.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    © 2025 Hutch Transport · Paperwork Portal
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="popupModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalText"></p>
+    </div>
+  </div>
+
+  <script>
+    const modalData = {
+      renaming: {
+        title: "📝 Renaming",
+        text: "Here you will find the step-by-step guide to rename interchanges correctly.\n\n1. RENAIMING FOR INTERCHANGES .\n<h5>IMPORT</h5>CONTAINER NUMBER {-1} 1 <LOAD>\nCONTAINER NUMBER {-1} 2 <POD 2>\nCONTAINER NUMBER {-1} 3 <EMPTY> <h5>EXPORT</h5>CONTAINER NUMBER {-1} 1X <EMPTY>\nCONTAINER NUMBER {-1} 2X <POD 2>\nCONTAINER NUMBER {-1} 3X <LOAD><h5>CUSTOMS</h5>CONTAINER NUMBER {-1} 1C <LOAD>\nCONTAINER NUMBER {-1} 2C <POD 2>\nCONTAINER NUMBER {-1} 2C <LOAD>\n<h5>RENAMING DRIVERS NAME </h5>INVOICE ||LOG SHEET\nSEE NAME OR CODE  ON SHEET AND RE WRITE FILE NAME\n[`  ITERATION N0. {DRIVER NAME}  `]"
+      },
+      invoice: {
+        title: "📄 REPAIR AND MAINTANCE WORK ",
+        text: "<h5>BASIC </h5>#THINGS TO CHECK IN PAPER# \nNUMBER OF [TRUCK,CHASSIS,]\nWHATS DONE\n[REPAIR,ANNUAL SAFETY,STOCK,WARRENTIES]\n#SAVING#\nWE SAVE FILE IN GIVEN CHASSIS OR UNIT \nFOLDER OF HUTCH EQUIPMENTS \nAND WE SAVE IT\nWITH DATE MENTIONED ON THE \nGIVEN PAPER<h5>SPECIAL CASES </h5>1. IF REPAIR COME WE NEED TO CHECK\n[IF BREAKS OR AC WORKS DONE ON IT]\n{IF BRAKE OR AC DONE WE SAVE THAT FILE IN BOTH AC AND REPAIR(FOR AC WORKS )\nAND IN BRAKE AND\nREPAIR (FOR BRAKE WORKS )}\n2. IF FORD VAN OR VAN CAME WE SAVE IT IN FORD VAN FOLDER\nIF ITS REPAIR OR WARRENTY OR ANYTHING ELSE WE SAVE \nIT ACCORDING TO IT \n3.THERE CAN BE MULTIPLE INFO IN SINGLE PAPER \n[LIKE CAN BE MULTIPLE UNITS\nAND MULTIPLE WORK DONE ]\n{IN THIS SCENARIO WE SAVE EVERYTHING ACCORDING TO GIVEN INFO}\n(WE SAVE IN EVERY GIVEN INFO )"
+      },
+      packing: {
+        title: "📑 ATTACHING    PAPER    WORKS    TO    LOADS",
+        text: "<h5>DISPATCH          PANDA</h5> STEP 1	ACCOUNTING>PAYROLL>>DATE>>DRIVER_NAME\nSTEP 2	COPY CONTAINER NUMBER (GO WITH ITERATION)\nSTEP 3	PUT CONT. NUMBER IN SEARCH LIST OF PANDA\nSTEP 4	OPEN SHIPMENT >>CHECK IMPORT OR EXPORT OR CUSTOMS\nSTEP 5	THEN CHECH DROP AND MOVES>>CHECK PICKUP AND DROP LOCATION\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FOR THAT DRIVER TO CONFIR WHICH NUMBER\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OF DOCUMENT WE HAVE TO ATTACH\nSTEP 6	ATTACH THE DOCUMNET ACCORDING TO PICKUP AND DROP\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#IF MOVE IS FROM TERMINAL TO CONSIGNEE THEN ADD\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1ST INTERCHANGE AND POD\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#IF MOVE IS FROM YARD TO CONSIGNEE THEN ADD POD \n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#IF MOVE IS FROM CONSIGNEE TO TERMINAL THEN ADD 3RD INTERCHANGE \n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#IF MOVE IS FROM TERMINAL TO YARD THEN ADD 1ST INTERCHANGE\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#IF MOVE IS FROM CONSIGNEE TO YARD THEN ADD NOTHING\nSTEP 7	IF ALL THREE DOCUMENTS ARE DONE APPROVED IT BY THUMBING UP IF ANY ONE IS MISSING OR WRONG DON'T APPROVE \nSTEP 8	RECHECK EVERYTHING AND THEN SUBMIT IT"
+      },
+      verification: {
+        title: "✅ Document Verification",
+        text: "Checklist:\n\n- Ensure names & numbers match.\n- Verify container & seal numbers.\n- Cross-check BL, invoice, and packing list.\n- Double-check before submission."
+      },
+      sharing: {
+        title: "📧 Document Sharing",
+        text: "Best practices:\n\n1. Use PDF format for safety.\n2. Password-protect sensitive files.\n3. Send via official email only.\n4. Confirm receipt from client."
+      }
+    };
+
+    function openModal(type) {
+      document.getElementById("popupModal").style.display = "flex";
+      document.getElementById("modalTitle").innerText = modalData[type].title;
+      document.getElementById("modalText").innerHTML = modalData[type].text.replace(/\n/g, "<br>");
+    }
+
+    function closeModal() {
+      document.getElementById("popupModal").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>

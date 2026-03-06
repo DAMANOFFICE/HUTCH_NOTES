@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RV's - Hutch Transport</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #eee;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(90deg, #ff0080, #7928ca, #2af598);
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 1.6rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      box-shadow: 0 4px 25px rgba(255, 0, 128, 0.5);
+      letter-spacing: 2px;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+    }
+
+    .header span {
+      margin-left: 8px;
+    }
+
+    /* Main */
+    .main {
+      max-width: 1300px;
+      margin: 60px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .main h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(90deg, #ff0080, #00f0ff, #00ff85);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+
+    .main p {
+      font-size: 1.3rem;
+      color: #ccc;
+      margin-bottom: 55px;
+    }
+
+    /* Card Grid */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(20, 20, 40, 0.9);
+      border-radius: 18px;
+      padding: 30px;
+      border: 2px solid transparent;
+      background-image: linear-gradient(#141428, #141428),
+        linear-gradient(90deg, #ff0080, #00f0ff, #00ff85);
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      box-shadow: 0 0 20px rgba(255, 0, 128, 0.4),
+                  0 0 30px rgba(0, 240, 255, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(
+        from 0deg,
+        #ff0080,
+        #00f0ff,
+        #00ff85,
+        #ff0080
+      );
+      animation: spin 8s linear infinite;
+      z-index: 0;
+      opacity: 0.2;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(90deg, #ff0080, #00f0ff, #00ff85);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #ddd;
+      line-height: 1.6;
+      z-index: 1;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 0 35px rgba(255, 0, 128, 0.7),
+                  0 0 45px rgba(0, 240, 255, 0.6);
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 70px;
+      padding: 20px;
+      background: #111;
+      color: #777;
+      text-align: center;
+      font-size: 0.9rem;
+      border-top: 2px solid #ff0080;
+      box-shadow: 0 -4px 15px rgba(255, 0, 128, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">🚚 <span>Hutch Transport</span></div>
+
+  <!-- Main -->
+  <div class="main">
+    <h1>RV's</h1>
+    <p>Handling RV’s in modern shipping operations.</p>
+
+    <!-- Card Grid -->
+    <div class="card-grid">
+      <div class="card">
+        <h2>📌 Requesting RV</h2>
+        <p>Steps for initiating and submitting RV requests with complete digital accuracy.</p>
+      </div>
+      <div class="card">
+        <h2>📤 Sending to Shipping Line</h2>
+        <p>Forwarding RV’s with encrypted, error-free communication to shipping lines.</p>
+      </div>
+      <div class="card">
+        <h2>🔍 Verification</h2>
+        <p>Automated verification workflows to reduce human error and improve compliance.</p>
+      </div>
+      <div class="card">
+        <h2>📧 Email Formats</h2>
+        <p>Cyber-styled mail templates for efficient client & shipping line communication.</p>
+      </div>
+      <div class="card">
+        <h2>✅ Confirmation</h2>
+        <p>Finalizing RV’s with secure confirmation and archival in blockchain-style logs.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    © 2025 Hutch Transport · RV’s Cyber Portal
+  </div>
+
+</body>
+</html>

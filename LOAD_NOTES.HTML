@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Load Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+<style>
+ body {
+    position:relative;
+   margin: 0;
+   font-family: 'Poppins', sans-serif;
+   background: url('https://img.wallpapic.com/i8148-149-123/thumb/trucks-trailer-truck-road-cars-wallpaper.jpg') no-repeat center center/cover;
+   color: white;
+   text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+ }
+ .top-bar {
+   background: black;
+   color: white;
+   padding: 15px 25px;
+   font-size: 1.5rem;
+   font-weight: bold;
+   letter-spacing: 1px;
+   display: flex;
+   align-items: center;
+   box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+ }
+ .top-bar::before { content: "🚚"; margin-right:8px; }
+ .container{ max-width:1000px; margin:auto; padding:20px; }
+ h1{ font-size:3rem; margin-bottom:20px; background:rgba(0,0,0,0.55); padding:10px 15px; border-radius:8px; }
+ .note-item{
+   background: rgba(255,255,255,0.25);
+   display:flex;
+   flex-direction:column;
+   gap:6px;
+   margin-bottom:15px;
+   padding:16px;
+   border-radius:12px;
+   backdrop-filter: blur(10px);
+   box-shadow:0 4px 14px rgba(0,0,0,0.25);
+   transition:transform 0.25s;
+   cursor:pointer;
+}
+ .note-item:hover{ transform:translateY(-3px); background: rgba(255,255,255,0.4); }
+ .note-desc{ margin-left:15px; font-size:0.9rem; color:#ffebcd; }
+.badge-missing{background:red;padding:2px 6px;border-radius:4px;color:#fff;} .badge-special{background:orange;padding:2px 6px;border-radius:4px;color:#fff;} 
+table, th, td {border:1px solid blue; border-collapse:collapse; padding:8px;} th {font-weight:bold; text-align:center; vertical-align:middle; text-transform:uppercase;} tr:nth-child(even){background:rgba(255,255,255,0.15);} tr:nth-child(odd){background:rgba(255,255,255,0.05);} td {transition: transform 0.2s;} td:hover {transform: scale(1.1); z-index:1;} td:first-child {font-weight:bold; color:#1e90ff; background:rgba(30,144,255,0.15); text-shadow:2px 2px 6px #000;} td:first-child::before{content:"📌 ";} </style>
+</head>
+<body>
+ <div class="top-bar">Hutch Transportation</div>
+ <div class="container">
+   <h1 style="text-align:center;">LOAD NOTES</h1>
+<div style="background:rgba(0,0,0,0.5);padding:10px;border-radius:10px;"><table style="width:100%;background:rgba(255,255,255,0.45);backdrop-filter:blur(6px);border-radius:10px;color:#fff;text-shadow:1px 1px 2px rgba(0,0,0,0.7);">
+<thead><tr style="background:#002f6c;"><th style="padding:10px;text-align:left">Thing</th><th style="padding:10px;text-align:left">Details</th><th style="padding:10px;text-align:left">Missing</th><th style="padding:10px;text-align:left">Special</th></tr></thead>
+<tbody>
+<tr><td>REEFER</td><td>GENSET IS REQUIRED,TEMP{GIVEN}</td><td>$1</td><td>-</td></tr>
+<tr><td>DG CONTAINER</td><td>DG CONTAINER (IN DRIVER NOTE): DG PAPER WORK IN EMAIL (EXCEPT DRIVER)</td><td>DG PAPER WORK INFO PENDING</td><td>-</td></tr>
+<tr><td>NO INFO</td><td>NO INFO (RED TAIL, WEB NOTE) ETA</td><td>MISSING INFO PENDING</td><td>-</td></tr>
+<tr><td>OFF HIRE</td><td>OFF HIRE CONTAINER: NEED CONFIRMATION, EXP DATE , REFERENCE NO., DELIVERY LOCATION</td><td>CONFIRMATION ONLY</td><td>IN RED TAIL OFF HIRE CONT.</td></tr>
+<tr><td>RUSH</td><td>RUSH CONTAINER (RED TAIL)</td><td>-</td><td>-</td></tr>
+<tr><td>CUSTOMS FOR MULTIPLE ORDER</td><td>SAME CONTAINER NUMBER FOR CUSTOM EXAM / GIVEN CLIENT (RED TAIL)</td><td>-</td><td>-</td></tr>
+<tr><td>CUSTOMS FOR PAD/DEST</td><td>CONTAINER IS ON PAD PLACEMENT/DESTINATION YET – PLEASE TRACE BEFORE DISPATCH (RED TAIL)</td><td>-</td><td>-</td></tr>
+<tr><td>IVY TERMINAL (OFF HIRE)</td><td>PLEASE CALL YARD COORDINATOR BEFORE SENDING TRUCKS</td><td>-</td><td>-</td></tr>
+<tr><td>PICKUP NUMBER</td><td>PU IS MISSING</td><td>MISSING PICKUP NUMBER</td><td>-</td></tr>
+<tr><td>CH ROBINSONS</td><td>APPOINTMENT (RED TAIL, WEB NOTE)</td><td>-</td><td>-</td></tr>
+<tr><td>POD MISSING</td><td>POD MISSING</td><td>MISSING POD</td><td>-</td></tr>
+<tr><td>LIVE/DROP</td><td>LIVE UNLOAD / DROP (RED TAIL)</td><td>-</td><td>-</td></tr>
+<tr><td>DAY CAB TRUCK</td><td>DAY CAB TRUCK NEEDED – RED TAIL AND DISPATCH NOTE</td><td>-</td><td>-</td></tr>
+<tr><td>CUSTOM EXAM (DG)</td><td>DG CONTAINER</td><td>-</td><td>-</td></tr>
+<tr><td>PAD/DESTINATION</td><td>CONTAINER IS ON PAD PLACEMENT / DESTINATION (RED TAIL)</td><td>-</td><td>-</td></tr>
+<tr><td>TERMINAL CONFIRMATION</td><td>NEED TO CONFIRM TERMINAL (RED TAIL)</td><td>-</td><td>-</td></tr>
+<tr><td>CONTAINER TYPE MISSING</td><td>CONTAINER SIZE NOT AVAILABLE YET – KEEP TRACING (RED TAIL)</td><td>-</td><td>-</td></tr>
+<tr><td>EMPTY DERAMPED / OLD STATUS</td><td>SHOWING OLD STATUS Empty Deramped Fraser Surrey – TRACE BEFORE DISPATCH</td><td>-</td><td>-</td></tr>
+<tr><td>DELIVERY DATE IN MAIL</td><td>CONFIRM DELIVERY DATE WITH CUSTOMER</td><td>-</td><td>-</td></tr>
+</tbody>
+</table></div>
+</div>
+</body>
+</html>
