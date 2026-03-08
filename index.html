@@ -33,6 +33,10 @@
     height:50px;
     object-fit:contain;
   }
+ .logo img:hover{
+  cursor: pointer;
+ transform: scale(110%);
+ }
   .logo .title {
     font-size:18px;
     font-weight:bold;
@@ -116,7 +120,24 @@
     font-size:18px;
     opacity:0.95;
   }
-
+  #footer{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  a{
+    color: rgb(145, 143, 143);
+    list-style: none;
+  }
+.ftrinner{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
   @media (max-width:900px) {
     .container { height:64px; padding:0 14px;}
     nav ul { gap:0; }
@@ -167,11 +188,66 @@
   <div style="max-width:1100px; margin:auto;">
     <h2 style="color:#d94b2f; text-align:center; margin-bottom:18px;">ABOUT HUTCH TRANSPORT</h2>
     <p style="text-align:center; color:#444;">
-      This is placeholder content. Replace with your real website sections (About, Services, Rates, Gallery, Contact).
+      Hutch Transportation is a Canadian Company based in Toronto, Province of Ontario.<br>
+Our main objective is to provide GURANTEED, EFFICIENT, SAFE, RELIABLE and ON TIME DELIVERIES.
+  
+
+</main>
+<div id="footer">
+    <div class="ftrinner">
+
+
+
+        <div class="footcol">
+            <h3> Navigation</h3>          
+            <span>
+                <ul>
+                    <li><a href="index.php" >Home </a></li>
+                    <li><a href="index.php#banner" class="scrolly"> About Us </a></li>
+                    <!-- <li><a href="#services" class="scrolly">Services</a> </li>-->
+                    <li><a href="index.php#rates" class="scrolly">Rates </a></li>
+                    <li><a href="index.php#Gallery" class="scrolly"> Photo Gallery </a> </li>           
+                    <li><a href="index.php#contact" class="scrolly">Contact us</a> </li>
+                </ul>
+            </span> 
+        </div>
+
+        <div class="footcol">
+            <h3> our services </h3>          
+            <span>
+                <ul>
+                    <li> <a href="services.php" class="scrolly"> import</a> </li>
+                    <li> <a href="services.php" class="scrolly"> Export </a> </li>
+                    <li> <a href="services.php" class="scrolly"> Storage </a> </li>
+                    <li> <a href="services.php" class="scrolly"> refrigrated containers </a> </li>
+                </ul>
+            </span> 
+
+        </div>
+
+
+
+        <div class="footcol2">
+            <h3>Contact us on</h3>          
+            <span>
+                <ul>
+                    <li> <strong>Hutch Transport</strong><br>
+                        7325 Torbram Rd ,<br>
+                        Mississauga, Ontario , L4T1G8</li>
+                    <li> Telephone: 905 - 677- 4858</li>
+                    <li>E-mail: <a href="mailto:info@hutchtransportation.com">info@hutchtransportation.com</a> </li>
+                </ul>
+            </span> 
+        </div>
+
+
+
+        <div class="footcol2">
+            <a href="index.php"> <img src="http://www.hutchtransportation.com/images/ftr-logo.png" alt="logo"></a></div>
+    </div>
     </p>
   </div>
-</main>
-
 </body>
 </html>
+
 
